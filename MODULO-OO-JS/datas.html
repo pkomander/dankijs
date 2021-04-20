@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // var date = new Date();
+
+        //dia do mes
+        // alert(date.getDate());
+
+        //dia da semana
+        // alert(date.getDay());
+
+        // alert(date.getFullYear());
+
+        //data atual
+        //alert(date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear());
+
+        //hora
+        //alert(date.getHours());
+
+        //hora atual
+        //alert(date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
+
+
+        //calculando a diferenca entre dias
+        var date = new Date("11/08/2021");
+
+        var date2 = new Date("11/10/2021");
+
+        //transformando milisegundos em dia = 1000 um segundo, 3600 segundo em uma hora, 24 horas do dia
+        //nesse caso ira retorna o numero 2 de diferenca de dias
+        var diferenca = (date2.getTime() - date.getTime()) / (1000 * 3600 * 24);
+
+        alert(diferenca);
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        //aplicação calculadora dinâmica
+
+        //numero inicial
+        //sinal da operação
+        //numero final
+
+        var numeroInicial = prompt("informe o primeiro numero: ");
+        
+        var sinal = prompt("informe o sinal da sua operação: ");
+
+        while(sinal != "-" && sinal != "+" && sinal != "/" && sinal != "*"){
+            alert("informe o sinal correto");
+            sinal = prompt("informe o sinal da sua operação: ");
+        }
+
+        var numeroFinal = prompt("informe o numero final: ");
+
+        //convertendo numero de string para int
+        numeroInicial = parseInt(numeroInicial);
+        numeroFinal = parseInt(numeroFinal);
+
+        var reusltadoFinal = 0;
+
+        if(sinal == "+"){
+            reusltadoFinal = numeroInicial + numeroFinal;
+        }
+        else if(sinal == "-"){
+            reusltadoFinal = numeroInicial - numeroFinal;
+        }
+        else if(sinal == "/"){
+            reusltadoFinal = numeroInicial / numeroFinal;
+        }
+        else if(sinal == "*"){
+            reusltadoFinal = numeroInicial * numeroFinal;
+        }
+
+        alert("o resultado final é: " + reusltadoFinal);
+
+    </script>
+    
+</body>
+</html>
