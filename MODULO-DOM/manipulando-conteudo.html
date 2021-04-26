@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Olá mundo!</p>
+    <p>Olá mundo 2!</p>
+    <p>Olá mundo 3!</p>
+    <p>Olá mundo 4!</p>
+    <p>Olá mundo 5!</p>
+
+
+    <script>
+
+        //getElementeByTagName pega o elemento de acordo com a tag, no caso "p"
+        var p = document.getElementsByTagName('p');
+
+        //alterando o conteudo de texto do primeiro elemento p com innerHTML
+        //p[0].innerHTML = "Manipulado via JS!";
+
+        // for(var i = 0; i < p.length; i++){
+        //     p[i].innerHTML = "Manipulado via JS - " + i;
+        // }
+
+        for(var i = 0; i < 10; i++){
+            p[0].innerHTML = p[0].innerHTML + i;
+        }
+
+    </script>
+    
+</body>
+</html>

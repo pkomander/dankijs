@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<style type="text/css">
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			margin-left: 0px;
+		}
+		.animEsquerda{
+			transition: 1s;
+			margin-left: 90px;
+		}
+	</style>
+
+	<div class="box"></div>
+
+	<script type="text/javascript">
+
+		var box = document.getElementsByClassName('.box');
+		console.log(box);
+		setTimeout(() => {
+			box.classList.add("animEsquerda");
+		},1000);
+
+
+		// var box = document.queryselectorAll(".box");
+		// console.log(box)
+		// setTimeout(()=>{
+		// 	box.classList.add("animEsquerda");
+		// },1000)
+
+	</script>
+</body>
+</html>

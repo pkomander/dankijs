@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function testes(){
+            return new Promise((resolve,reject) =>{
+                setTimeout(function(){
+                    const erro = false;
+
+                    if(erro){
+                        reject('Erro...')
+                    }else{
+                        resolve("A promisse foi resolvida com sucesso");
+                    }
+                },2000);
+                
+            })
+        }
+
+        // chamada: chamei testes se deu tudo certo"then", execute a function res
+        // testes().then(function(res){
+        //     alert(res);
+        // }).catch(function(err){
+        //     alert(err);
+        // });
+
+
+
+
+        //criando função assincrona, await so permite executar o restante do codigo depois que a função passada for executada
+        async function testes2(){
+            await testes().then(function(res){
+                alert(res);
+            });
+            alert('olá');
+        }
+
+        testes2();
+
+
+        
+    </script>
+    
+</body>
+</html>

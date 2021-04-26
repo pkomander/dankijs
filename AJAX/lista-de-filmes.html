@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        h1{
+            text-align: center;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding-bottom: 10px;
+            margin-bottom: 50px;
+            border-bottom: 2px solid black;
+        }
+        img{
+            margin-left: 42.5%;
+            width: 200px;
+        }
+        .tituloFilme{
+            text-align:center;
+            height: 200px;
+            font-size: 25px;
+        }
+        .description{
+            padding-top: 20px;
+            text-align: left;
+        }
+
+        @media (max-width: 872px){
+            img{
+                margin-left: 38%;
+                width: 200px;
+            }
+            .tituloFilme{
+                text-align:center;
+                height: 200px;
+                font-size: 25px;
+            }
+            .description{
+                padding-top: 20px;
+                text-align: left;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <h1>Lista de Filmes Mais Assistidos!</h1>
+    </div>
+
+
+    <script>
+
+        fetch('https://api.themoviedb.org/3/movie/popular?api_key=506fadb0256c13349acc05dabebf9604&language=en-USpage=1', {
+            method: 'GET'
+        }).then(Response => Response.json()).then(function(json){
+            var container = document.querySelector('.container');
+            console.log(json);
+            json.results.map(function(val){
+                container.innerHTML+=`
+                <img src = "https://image.tmdb.org/t/p/w185/`+val.poster_path+`"/>
+                <div style="cursor: pointer;" class="tituloFilme">`+val.title+`
+                <div style="display: none;" class="description">`+val.overview+`</div>
+                <hr>
+                </div>`;
+            })
+
+
+            var titulos = document.querySelectorAll('.tituloFilme');
+            for(var i = 0; i < titulos.length; i++){
+                titulos[i].addEventListener('click', function(t){
+                    if(t.target.querySelector('.description').style.display == 'none'){
+                        t.target.querySelector('.description').style.display = 'block';
+                    }else{
+                        t.target.querySelector('.description').style.display = 'none';
+                    }
+                    
+                })
+            }
+        })
+
+    </script>
+    
+</body>
+</html>
