@@ -8,14 +8,25 @@
 </head>
 <body>
 
+    <p onbeforeprint="debug(event)" class="fatorial">valor</p>
+    <!-- <input type="button" onclick="debug(event)"> -->
+    
     <script>
 
         var numero = 5;
         var fatorial = 1;
+        var fatorailP = document.querySelector('.fatorial');
 
         for(var i = 1; i < numero; i++){
             fatorial += fatorial * i;
+            
+            fatorailP.innerHTML = ` <p class="fatorial"> valor: `+fatorial+ `<p/> <br>`;
             console.log(fatorial);
+
+        }
+
+        function debug(e){
+            alert("Evento: " + e.type);
         }
 
     </script>
